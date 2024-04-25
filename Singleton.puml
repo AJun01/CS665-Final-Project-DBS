@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+class Main
+class BackgroundMusicPlayer
+
+BackgroundMusicPlayer-->Main
+
+
+class Main{
++ main(args: String[]): void
+- This class serves as the entry point for the application.
+- It initializes the background music player using the Singleton pattern.
+- It creates and displays the main view using the MVC pattern.
+}
+class BackgroundMusicPlayer{
+- instance: BackgroundMusicPlayer (static)
++ getInstance(): BackgroundMusicPlayer (static)
++ play(location: String): void
++ stop(): void
+- The constructor is private to enforce the Singleton pattern.
+}
+@enduml

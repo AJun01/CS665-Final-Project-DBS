@@ -1,0 +1,71 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class DogPicking
+class DogDataTable
+class DogBoardingCampDatabase
+class Main
+class MainController
+class MainView
+class BackgroundMusicPlayer
+
+DogBoardingCampDatabase-->MainView
+DogPicking-->MainView
+DogDataTable-->MainView
+
+MainView-->MainController
+Main-->MainView
+MainController-->Main
+MainController-->MainView
+
+BackgroundMusicPlayer-->Main
+
+class DogPicking {
+-page1
++ DogPicking(): void
++ createView(): void
++ deleteSelectedDog(): void
++ loadTableData(): void
+}
+
+class DogBoardingCampDatabase{
+-page2
++ DogBoardingCampDatabase(): void
++ createView(): void
++ insertData(): void
+}
+
+class DogDataTable{
+-page3
++ DogDataTable(): void
++ createTable(): void
++ createBackButton(): void
++ loadTableData(): void
+}
+class MainView{
+-main page
+-controller: MainController
++ MainView(): void
++ createView(): void
+}
+
+class MainController{
+- view: MainView
++ MainController(view: MainView): void
++ initView(): void
+}
+class BackgroundMusicPlayer{
+- instance: BackgroundMusicPlayer (static)
++ getInstance(): BackgroundMusicPlayer (static)
++ play(location: String): void
++ stop(): void
+- The constructor is private to enforce the Singleton pattern.
+}
+
+class Main{
++ main(args: String[]): void
+- This class serves as the entry point for the application.
+- It initializes the background music player using the Singleton pattern.
+- It creates and displays the main view using the MVC pattern.
+}
+@enduml

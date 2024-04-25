@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class MainView
+class DogPicking
+class DogDataTable
+class DogBoardingCampDatabase
+
+DogBoardingCampDatabase-->MainView
+DogPicking-->MainView
+DogDataTable-->MainView
+
+class MainView{
+-main page
+-controller: MainController
++ MainView(): void
++ createView(): void
+}
+
+class DogPicking {
+-page1
++ DogPicking(): void
++ createView(): void
++ deleteSelectedDog(): void
++ loadTableData(): void
+}
+
+class DogBoardingCampDatabase{
+-page2
++ DogBoardingCampDatabase(): void
++ createView(): void
++ insertData(): void
+}
+
+class DogDataTable{
+-page3
++ DogDataTable(): void
++ createTable(): void
++ createBackButton(): void
++ loadTableData(): void
+}
+
+
+
+@enduml
