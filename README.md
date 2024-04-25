@@ -6,6 +6,7 @@
 | Course       | Fall / **_Spring_** / Summer |
 | Assignment # | Final                        |
 
+![img.png](img.png)
 # Assignment Overview
 - For the final project, I have built a dog boarding system that allows you to store, delete, display of data of dogs by their name,breed,age to a relational database Mysql
 - Utilized Page Object Pattern that have not yet mentioned from class, also included MVC and singleton that have already introduced from class
